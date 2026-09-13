@@ -1,0 +1,8 @@
+{
+  "name": "Training log",
+  "short_name": "Log",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#E9ECEF",
+  "theme_color": "#E9ECEF"
+}
