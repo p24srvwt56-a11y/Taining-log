@@ -154,7 +154,7 @@ function clearDraft() { draft = {}; try { localStorage.removeItem(DRAFT_KEY); } 
 function draftHasContent() {
   return Object.values(draft).some(v => (v.sets || []).some(s => s && (s.reps || s.weight)) || v.rir);
 }
-function fmt(n) { return String(Math.round(n * 100) / 100).replace(/\.?0+$/, ""); }
+function fmt(n) { return String(Math.round(n * 100) / 100); }
 function roundTo(n, step) { return Math.round(n / step) * step; }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 function stamp(d) { return new Date(d).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
@@ -167,18 +167,22 @@ function suggest(ex) {
   const past = pastFor(ex.id);
   if (!past.length) return { text: `First time. Pick a weight you can do for ${ex.low} clean reps with 1–2 left in the tank.`, state: "new" };
   const last = past[0].entries[ex.id];
-  const reps = last.sets.map(s => Number(s.reps) || 0).filter(r => r > 0);
-  const w = Number(last.sets[0] && last.sets[0].weight) || 0;
+  const done = last.sets.filter(s => Number(s.reps) > 0);
+  const reps = done.map(s => Number(s.reps) || 0);
+  const w = Math.max(0, ...done.map(s => Number(s.weight) || 0));
+  const mixed = done.some(s => (Number(s.weight) || 0) !== w);
   const rir = last.rir === "" || last.rir == null ? null : Number(last.rir);
   const top = ex.low + 2;
   const wl = w ? `${fmt(w)}kg` : "BW";
-  const summary = `${wl} × ${reps.join(", ")}`;
+  const summary = mixed
+    ? done.map(s => `${Number(s.weight) ? fmt(Number(s.weight)) : "BW"}×${s.reps}`).join(", ")
+    : `${wl} × ${reps.join(", ")}`;
   const hitTop = reps.length >= ex.sets && reps.every(r => r >= top);
 
   // Stall: three sessions at the same weight with no improvement in the best set.
   if (past.length >= 3 && !hitTop) {
     const p = past.slice(0, 3).map(s => s.entries[ex.id]);
-    const ws = p.map(e => Number(e.sets[0] && e.sets[0].weight) || 0);
+    const ws = p.map(e => Math.max(0, ...e.sets.map(s => Number(s.weight) || 0)));
     const best = p.map(e => Math.max(0, ...e.sets.map(s => Number(s.reps) || 0)));
     if (ws[0] === ws[1] && ws[1] === ws[2] && best[0] <= best[1] && best[1] <= best[2] && w > 0) {
       const back = roundTo(w * 0.9, ex.inc >= 2.5 ? 2.5 : 1.25);

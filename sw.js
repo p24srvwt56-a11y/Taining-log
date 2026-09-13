@@ -1,4 +1,4 @@
-const C = "training-log-v2";
+const C = "training-log-v3";
 const FILES = ["./", "./index.html", "./manifest.json"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(C).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
