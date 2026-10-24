@@ -13,7 +13,7 @@
   body{margin:0;background:#E9ECEF;color:#16191C;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
   .wrap{max-width:640px;margin:0 auto;padding:20px 16px 70px}
-  .nums,input,.target,.setno,.rest,textarea{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+  .nums,input,.target,.setno,.rest,textarea,.warm b{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
   h1{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:0 0 12px}
   nav{display:flex;gap:6px;margin-bottom:18px}
   .tab{flex:1;padding:9px;border:1px solid #C9D0D6;background:#fff;color:#4A525A;border-radius:7px;font-size:13px}
@@ -21,27 +21,38 @@
   .days{display:flex;gap:6px;margin-bottom:14px}
   .day{flex:1;padding:11px;border:1px solid #C9D0D6;background:#fff;border-radius:7px;font-size:14px;color:#4A525A}
   .day.on{background:#16496B;border-color:#16496B;color:#fff;font-weight:500}
-  .banner{background:#FFF4E0;border:1px solid #E8C98A;color:#6B4A0E;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.45;margin-bottom:14px}
+  .banner{background:#FFF4E0;border:1px solid #E8C98A;color:#6B4A0E;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.45;margin-bottom:12px}
   .draftnote{font-size:12px;color:#7A828B;margin:0 0 12px;display:flex;justify-content:space-between}
   .draftnote a{color:#16496B;text-decoration:none}
   .block{background:#fff;border:1px solid #D3D8DD;border-radius:10px;padding:14px;margin-bottom:14px}
   .pair{margin:0 0 12px;font-size:12px;color:#16496B}
-  .ex{margin-bottom:16px}
+  .ex{margin-bottom:18px}
   .exhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
   h2{font-size:15px;font-weight:600;margin:0}
   .target{font-size:12px;color:#7A828B;white-space:nowrap}
-  .cue{font-size:12.5px;line-height:1.45;margin:6px 0 10px;padding:7px 9px;border-radius:6px;
+  .alt{font-size:11.5px;color:#7A828B;margin:3px 0 0}
+  .cue{font-size:12.5px;line-height:1.45;margin:6px 0 8px;padding:7px 9px;border-radius:6px;
     background:#F2F4F6;color:#4A525A;border-left:3px solid #C9D0D6}
   .cue.up{background:#E8F3EC;color:#1F5E3F;border-left-color:#2E7D4F}
   .cue.stall{background:#FDECEA;color:#7A2E24;border-left-color:#C0392B}
+  .cue.caution{background:#FFF4E0;color:#6B4A0E;border-left-color:#D99A2B}
+  .warm{font-size:12px;color:#7A828B;margin:0 0 8px}
+  details.form{margin:0 0 8px}
+  details.form summary{font-size:12px;color:#16496B;cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
+  details.form summary::-webkit-details-marker{display:none}
+  details.form summary::before{content:"▸ ";font-size:10px}
+  details.form[open] summary::before{content:"▾ "}
+  details.form p{font-size:12.5px;line-height:1.45;color:#4A525A;margin:5px 0 0;padding:6px 9px;background:#F7F9FA;border-radius:6px}
   table{width:100%;border-collapse:collapse}
   td{padding:3px 3px 3px 0}
   .setno{width:20px;font-size:12px;color:#9AA2AA}
   input{width:100%;padding:11px 10px;border:1px solid #C9D0D6;border-radius:6px;font-size:16px;background:#fff;color:#16191C}
   input:focus{outline:2px solid #16496B;outline-offset:-1px;border-color:#16496B}
-  .exfoot{margin-top:7px}
+  .exfoot{margin-top:7px;display:flex;justify-content:space-between;align-items:center;gap:10px}
   .exfoot label{display:flex;align-items:center;gap:9px;font-size:12px;color:#7A828B}
   .rir{width:70px;padding:7px;font-size:14px}
+  .flag{padding:7px 11px;border:1px solid #C9D0D6;background:#fff;color:#7A828B;border-radius:6px;font-size:12px;white-space:nowrap}
+  .flag.on{background:#FFF4E0;border-color:#D99A2B;color:#6B4A0E;font-weight:500}
   .rest{width:100%;margin-top:4px;padding:10px;border:1px dashed #B6BFC7;background:#F7F9FA;border-radius:7px;font-size:13px;color:#4A525A}
   .rest.run{background:#16496B;color:#fff;border-style:solid;border-color:#16496B}
   .save{width:100%;padding:15px;background:#16496B;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:500;margin-top:6px}
@@ -49,6 +60,7 @@
   .hist{background:#fff;border:1px solid #D3D8DD;border-radius:10px;padding:13px;margin-bottom:10px}
   .hist h3{font-size:14px;margin:0 0 8px;font-weight:600}
   .hist p{display:flex;justify-content:space-between;gap:14px;font-size:12.5px;margin:4px 0;color:#4A525A;border-bottom:1px solid #F0F2F4;padding-bottom:4px}
+  .hist .back{color:#B4651A;font-weight:600}
   .muted{color:#7A828B;font-size:13px}
   .small{font-size:12px;margin-top:16px}
   textarea{width:100%;padding:10px;border:1px solid #C9D0D6;border-radius:7px;font-size:11.5px;background:#fff}
@@ -82,49 +94,77 @@
 const KEY = "gymlog-v1";
 const DRAFT_KEY = "gymlog-draft-v1";
 
+// Form cues, shown on tap. Kept short on purpose.
+const CUES = {
+  hack: "Stop each rep before your lower back leaves the pad. Feet slightly higher on the platform. Leave 2 in the tank.",
+  press: "Moderate arch only, feet flat on the floor. Stop with 1–2 reps in reserve — form goes first on the last grinding rep.",
+  hkr: "No swinging. Knees to hip height, not to your chest — curling the pelvis up rounds the lower back.",
+  legcurl: "Sit upright. If you feel pulling or tingling down the back of the leg, don't fully straighten the knees.",
+  sdbp: "Back flat against the pad throughout. Take the dumbbells from the rack, never bend to the floor for them.",
+  mrow: "Chest stays on the pad for every rep. Knees bent, no leaning back to finish the pull.",
+  curl: "Stand with your back against a pillar or post — no leaning back to move the weight.",
+  dbpick: "Lift the dumbbells from the rack, or bend at the hips and knees with a straight back — never round over to grab them.",
+  apu: "Full hang at the bottom, chin over the bar at the top, no kicking. Reduce assist only when every set hits the top of the range."
+};
+
+const HACK_CAUTION = {
+  until: "2026-11-07",
+  kg: 70,
+  text: "Back caution until 7 Nov: 70kg for all sets, stop each rep before your lower back leaves the pad, leave 2 in the tank."
+};
+
 const PROGRAMME = {
   A: { name: "Day A", blocks: [
     { rest: 90, items: [
-      { id: "a-hack", name: "Hack squat", sets: 3, low: 8, inc: 2.5 },
-      { id: "a-incbb", name: "Incline barbell press", sets: 3, low: 6, inc: 2.5 } ] },
+      { id: "a-hack", name: "Hack squat", sets: 3, low: 8, inc: 2.5, warmup: true, cue: "hack", caution: HACK_CAUTION },
+      { id: "a-incbb", name: "Incline barbell press", sets: 3, low: 6, inc: 2.5, warmup: true, cue: "press" } ] },
     { rest: 75, items: [
-      { id: "a-csrow", name: "Chest-supported row", sets: 3, low: 10, inc: 2.5 },
-      { id: "a-hkr", name: "Hanging knee raise", sets: 3, low: 12, inc: 0, bw: true,
+      { id: "a-csrow", name: "Chest-supported row", sets: 3, low: 10, inc: 2, cue: "dbpick" },
+      { id: "a-hkr", name: "Hanging knee raise", sets: 3, low: 12, inc: 0, bw: true, failOk: true, cue: "hkr",
         upNote: "Top of range on every set — progress to straight-leg raises and drop back to 12 reps." } ] },
     { rest: 75, items: [
-      { id: "a-bss", name: "Bulgarian split squat", sets: 2, low: 10, inc: 2, uni: true },
+      { id: "a-bss", name: "Bulgarian split squat", sets: 2, low: 10, inc: 2, uni: true, cue: "dbpick" },
       { id: "a-pulldown", name: "Lat pulldown", sets: 2, low: 12, inc: 2.5 } ] },
     { rest: 45, items: [
-      { id: "a-latraise", name: "Cable lateral raise", sets: 2, low: 15, inc: 1.25, uni: true } ] } ] },
+      { id: "a-latraise", name: "Cable lateral raise", sets: 2, low: 15, inc: 1.25, uni: true, failOk: true } ] } ] },
   B: { name: "Day B", blocks: [
     { rest: 90, items: [
-      { id: "b-ohp", name: "Overhead press", sets: 3, low: 6, inc: 2.5 },
-      { id: "b-pullup", name: "Pull-up / weighted pulldown", sets: 3, low: 8, inc: 2.5, bw: true,
-        upNote: "Top of range on every set — add 2.5kg with a belt or a dumbbell between your feet, and drop back to 8 reps." } ] },
+      { id: "b-sdbp", name: "Seated dumbbell shoulder press", sets: 3, low: 8, inc: 2, warmup: true, cue: "sdbp" },
+      { id: "b-apu", name: "Assisted pull-up", sets: 3, low: 6, inc: 5, assist: true, cue: "apu" } ] },
     { rest: 90, items: [
-      { id: "b-stepup", name: "Dumbbell step-up", sets: 3, low: 10, inc: 2, uni: true },
-      { id: "b-incdb", name: "Incline dumbbell press", sets: 3, low: 10, inc: 2 } ] },
+      { id: "b-stepup", name: "Dumbbell step-up", sets: 3, low: 10, inc: 2, uni: true, cue: "dbpick" },
+      { id: "b-incdb", name: "Incline dumbbell press", sets: 3, low: 10, inc: 2, cue: "dbpick" } ] },
     { rest: 60, items: [
-      { id: "b-legcurl", name: "Seated leg curl", sets: 3, low: 12, inc: 2.5 },
-      { id: "b-pushdown", name: "Triceps pushdown", sets: 3, low: 12, inc: 2.5 } ] },
+      { id: "b-legcurl", name: "Seated leg curl", sets: 3, low: 12, inc: 2.5, failOk: true, cue: "legcurl" },
+      { id: "b-pushdown", name: "Triceps pushdown", sets: 3, low: 12, inc: 2.5, failOk: true } ] },
     { rest: 45, items: [
-      { id: "b-curl", name: "Cable curl", sets: 2, low: 12, inc: 2.5 } ] } ] },
+      { id: "b-curl", name: "Cable curl", sets: 2, low: 12, inc: 2.5, failOk: true, cue: "curl" } ] } ] },
   C: { name: "Day C", blocks: [
     { rest: 90, items: [
-      { id: "c-hack", name: "Hack squat", sets: 3, low: 12, inc: 2.5 },
-      { id: "c-bench", name: "Flat barbell bench press", sets: 3, low: 8, inc: 2.5 } ] },
+      { id: "c-hack", name: "Hack squat", sets: 3, low: 12, inc: 2.5, warmup: true, cue: "hack", caution: HACK_CAUTION },
+      { id: "c-bench", name: "Flat barbell bench press", sets: 3, low: 8, inc: 2.5, warmup: true, cue: "press" } ] },
     { rest: 90, items: [
-      { id: "c-cablerow", name: "Seated cable row", sets: 3, low: 10, inc: 2.5 },
-      { id: "c-lyingcurl", name: "Lying leg curl", sets: 3, low: 12, inc: 2.5 } ] },
+      { id: "c-csmrow", name: "Chest-supported machine row", sets: 3, low: 10, inc: 2.5, warmup: true, cue: "mrow",
+        alt: "No machine? Use the incline-bench dumbbell row from Day A." },
+      { id: "b-legcurl", name: "Seated leg curl", sets: 3, low: 12, inc: 2.5, failOk: true, cue: "legcurl" } ] },
     { rest: 45, items: [
-      { id: "c-facepull", name: "Face pull", sets: 2, low: 15, inc: 2.5 },
-      { id: "c-hammer", name: "Hammer curl", sets: 2, low: 15, inc: 2 } ] },
+      { id: "c-facepull", name: "Face pull", sets: 2, low: 15, inc: 2.5, failOk: true },
+      { id: "c-hammer", name: "Hammer curl", sets: 2, low: 15, inc: 2, failOk: true } ] },
     { rest: 45, items: [
       { id: "c-pallof", name: "Pallof press", sets: 3, low: 12, inc: 2.5, uni: true } ] } ] }
 };
 
+// Exercises no longer in the programme — their history still shows under these names.
+const LEGACY = {
+  "b-ohp": "Overhead press (standing)",
+  "b-pullup": "Pull-up / weighted pulldown",
+  "c-cablerow": "Seated cable row",
+  "c-lyingcurl": "Lying leg curl"
+};
+
 const ITEMS = {};
 Object.values(PROGRAMME).forEach(d => d.blocks.forEach(b => b.items.forEach(i => ITEMS[i.id] = i)));
+function nameOf(id) { return ITEMS[id] ? ITEMS[id].name + (ITEMS[id].assist ? " (assist kg)" : "") : (LEGACY[id] || id); }
 
 let data = load();
 let day = "A";
@@ -152,59 +192,116 @@ function saveDraft() {
 }
 function clearDraft() { draft = {}; try { localStorage.removeItem(DRAFT_KEY); } catch (e) {} }
 function draftHasContent() {
-  return Object.values(draft).some(v => (v.sets || []).some(s => s && (s.reps || s.weight)) || v.rir);
+  return Object.values(draft).some(v => (v.sets || []).some(s => s && (s.reps || s.weight)) || v.rir || v.back);
 }
 function fmt(n) { return String(Math.round(n * 100) / 100); }
-function roundTo(n, step) { return Math.round(n / step) * step; }
+function roundTo(n, step) { return step > 0 ? Math.round(n / step) * step : n; }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 function stamp(d) { return new Date(d).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
+function todayStr() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
 
 function pastFor(id) {
   return data.sessions.filter(s => s.entries[id]).sort((a, b) => new Date(b.date) - new Date(a.date));
 }
+// Working figures from one logged entry. For weight the heaviest completed set counts;
+// for an assist machine the lightest assist (hardest set) counts.
+function stats(entry, ex) {
+  const done = entry.sets.filter(s => Number(s.reps) > 0);
+  const reps = done.map(s => Number(s.reps));
+  const ws = done.map(s => Number(s.weight) || 0);
+  const w = ws.length ? (ex && ex.assist ? Math.min(...ws) : Math.max(...ws)) : 0;
+  const mixed = ws.some(x => x !== w);
+  const rir = entry.rir === "" || entry.rir == null ? null : Number(entry.rir);
+  return { done, reps, w, mixed, rir, back: !!entry.back };
+}
+function cautionOn(ex) { return !!(ex.caution && todayStr() <= ex.caution.until); }
 
 function suggest(ex) {
   const past = pastFor(ex.id);
-  if (!past.length) return { text: `First time. Pick a weight you can do for ${ex.low} clean reps with 1–2 left in the tank.`, state: "new" };
-  const last = past[0].entries[ex.id];
-  const done = last.sets.filter(s => Number(s.reps) > 0);
-  const reps = done.map(s => Number(s.reps) || 0);
-  const w = Math.max(0, ...done.map(s => Number(s.weight) || 0));
-  const mixed = done.some(s => (Number(s.weight) || 0) !== w);
-  const rir = last.rir === "" || last.rir == null ? null : Number(last.rir);
-  const top = ex.low + 2;
-  const wl = w ? `${fmt(w)}kg` : "BW";
-  const summary = mixed
-    ? done.map(s => `${Number(s.weight) ? fmt(Number(s.weight)) : "BW"}×${s.reps}`).join(", ")
-    : `${wl} × ${reps.join(", ")}`;
-  const hitTop = reps.length >= ex.sets && reps.every(r => r >= top);
+  const label = v => ex.assist ? `${fmt(v)}kg assist` : (v ? `${fmt(v)}kg` : "BW");
 
-  // Stall: three sessions at the same weight with no improvement in the best set.
-  if (past.length >= 3 && !hitTop) {
-    const p = past.slice(0, 3).map(s => s.entries[ex.id]);
-    const ws = p.map(e => Math.max(0, ...e.sets.map(s => Number(s.weight) || 0)));
-    const best = p.map(e => Math.max(0, ...e.sets.map(s => Number(s.reps) || 0)));
-    if (ws[0] === ws[1] && ws[1] === ws[2] && best[0] <= best[1] && best[1] <= best[2] && w > 0) {
-      const back = roundTo(w * 0.9, ex.inc >= 2.5 ? 2.5 : 1.25);
-      return { text: `Stalled — three sessions at ${fmt(w)}kg with no rep progress. Drop to ${fmt(back)}kg, own every rep, and build back up. Note whether the sticking point is technique or fatigue.`, state: "stall" };
+  // Safety first: the back flag.
+  if (past.length >= 2) {
+    const recent = past.slice(0, 3);
+    const flags = recent.filter(s => s.entries[ex.id].back).length;
+    if (flags >= 2) return { text: `Your back flagged this ${flags} of the last ${recent.length} sessions. Cut the weight by 20% or skip it today, and raise it with Claude at the next review.`, state: "stall" };
+  }
+  if (cautionOn(ex)) return { text: ex.caution.text, state: "caution" };
+
+  const lastDone = past.find(s => stats(s.entries[ex.id], ex).done.length);
+  if (!lastDone) {
+    if (ex.assist) return { text: `First time. Set the assist so that ${ex.low} clean reps leaves 1–2 in the tank. Log the assist weight.`, state: "new" };
+    return { text: `First time. Pick a weight you can do for ${ex.low} clean reps with 1–2 left in the tank.`, state: "new" };
+  }
+  const L = stats(lastDone.entries[ex.id], ex);
+  const top = ex.low + 2;
+  const step = ex.inc;
+  const dir = ex.assist ? -1 : 1;
+  const summary = L.mixed
+    ? L.done.map(s => `${Number(s.weight) ? fmt(Number(s.weight)) : "BW"}×${s.reps}`).join(", ")
+    : `${label(L.w)} × ${L.reps.join(", ")}`;
+  const full = L.reps.length >= ex.sets;
+  const hitTop = full && L.reps.every(r => r >= top);
+  const overshoot = full && L.reps.every(r => r >= top + 3);
+
+  // Stall: three sessions at the same load with no improvement in the best set.
+  if (past.length >= 3 && !hitTop && step > 0) {
+    const p = past.slice(0, 3).map(s => stats(s.entries[ex.id], ex));
+    const sameW = p[0].w === p[1].w && p[1].w === p[2].w && p[0].w > 0;
+    const best = p.map(x => Math.max(0, ...x.reps));
+    if (sameW && best[0] <= best[1] && best[1] <= best[2]) {
+      if (L.rir !== null && L.rir >= 1) {
+        return { text: `Last: ${summary} — the same for three sessions, with ${L.rir} in reserve. Push to ${top} reps today; the weight only moves once every set hits ${top}.`, state: "hold" };
+      }
+      if (ex.assist) {
+        const back = roundTo(L.w * 1.1, step);
+        return { text: `Stalled — three sessions at ${fmt(L.w)}kg assist with no rep progress. Add assist back to ${fmt(back)}kg, own every rep, then work it down again.`, state: "stall" };
+      }
+      const back = roundTo(L.w * 0.9, step);
+      return { text: `Stalled — three sessions at ${fmt(L.w)}kg with no rep progress. Drop to ${fmt(back)}kg, own every rep, and build back up. Note whether the sticking point is technique or fatigue.`, state: "stall" };
     }
   }
 
+  const next = n => ex.assist ? (n <= 0 ? "try it unassisted" : `cut assist to ${fmt(n)}kg`) : `go to ${fmt(n)}kg`;
+
+  if (overshoot && step > 0 && L.w > 0) {
+    return { text: `Last: ${summary} — well past the ${ex.low}–${top} range. Bigger jump: ${next(L.w + dir * 2 * step)} and drop back to ${ex.low} reps.`, state: "up" };
+  }
   if (hitTop) {
     if (ex.upNote) return { text: `Last: ${summary}. ${ex.upNote}`, state: "up" };
-    return { text: `Last: ${summary}. Top of range on every set — go to ${fmt(w + ex.inc)}kg and drop back to ${ex.low} reps.`, state: "up" };
+    return { text: `Last: ${summary}. Top of range on every set — ${next(L.w + dir * step)} and drop back to ${ex.low} reps.`, state: "up" };
   }
-  if (rir !== null && rir >= 3 && w > 0 && !ex.bw) {
-    return { text: `Last: ${summary} with ${rir} in reserve — that's too light. Go up to ${fmt(w + ex.inc)}kg now rather than waiting for the top of the range.`, state: "up" };
+  if (L.rir !== null && L.rir >= 3 && L.w > 0 && step > 0) {
+    return { text: `Last: ${summary} with ${L.rir} in reserve — too easy. ${next(L.w + dir * step).replace(/^./, c => c.toUpperCase())} now rather than waiting for the top of the range.`, state: "up" };
   }
-  if (rir === 0) {
-    return { text: `Last: ${summary} to failure. Hold at ${wl}, aim for the same reps but stop with 1–2 in reserve.`, state: "hold" };
+  if (L.rir === 0 && !ex.failOk) {
+    return { text: `Last: ${summary} to failure. Hold at ${label(L.w)}, same reps, but stop 1–2 short today — form goes first on the last grinding rep.`, state: "hold" };
   }
-  return { text: `Last: ${summary}. Stay at ${w ? fmt(w) + "kg" : "bodyweight"} and add a rep where you can. Top of range is ${top}.`, state: "hold" };
+  return { text: `Last: ${summary}. Stay at ${label(L.w)} and add a rep where you can. Top of range is ${top}.`, state: "hold" };
+}
+
+function warmupLine(ex) {
+  if (!ex.warmup) return "";
+  let base = 0;
+  if (cautionOn(ex)) base = ex.caution.kg;
+  else {
+    const lastDone = pastFor(ex.id).find(s => stats(s.entries[ex.id], ex).done.length);
+    if (lastDone) base = stats(lastDone.entries[ex.id], ex).w;
+  }
+  if (!base) return "";
+  const step = ex.inc || 2.5;
+  const a = roundTo(base * 0.5, step), b = roundTo(base * 0.75, step);
+  if (a <= 0) return "";
+  return `<p class="warm">Warm-up, don't log: <b>${fmt(a)}kg × 8</b>, then <b>${fmt(b)}kg × 4</b></p>`;
 }
 
 function weekNumber() { return Math.floor(data.sessions.length / 3) + 1; }
 function deloadWeek() { return data.sessions.length >= 3 && weekNumber() % 8 === 0; }
+function daysSinceLast() {
+  if (!data.sessions.length) return null;
+  const last = Math.max(...data.sessions.map(s => new Date(s.date).getTime()));
+  return Math.floor((Date.now() - last) / 864e5);
+}
 
 function bwTrend() {
   const ws = data.weights.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -234,6 +331,8 @@ function render() {
 function renderLog() {
   let h = `<div class="days">` + Object.keys(PROGRAMME).map(k =>
     `<button class="day${day === k ? " on" : ""}" data-day="${k}">${PROGRAMME[k].name}</button>`).join("") + `</div>`;
+  const off = daysSinceLast();
+  if (off !== null && off >= 6) h += `<div class="banner"><strong>${off} days since your last session.</strong> Start the main lifts about 10% lighter today and build back over the next two.</div>`;
   if (deloadWeek()) h += `<div class="banner"><strong>Deload week.</strong> Same exercises at two-thirds of your usual weight and half the sets. The suggestions below are your normal targets — ignore them this week.</div>`;
   h += `<p class="draftnote"><span>Week ${weekNumber()} · ${draftHasContent() ? "Draft kept automatically" : "Entries save as you type"}</span>${draftHasContent() ? `<a href="#" id="discard">Discard draft</a>` : ""}</p>`;
   PROGRAMME[day].blocks.forEach((b, bi) => {
@@ -242,16 +341,22 @@ function renderLog() {
     b.items.forEach(ex => {
       const s = suggest(ex);
       const d = draft[ex.id] || { sets: [] };
-      h += `<div class="ex"><div class="exhead"><h2>${ex.name}</h2><span class="target">${ex.sets} × ${ex.low}${ex.uni ? " each side" : ""}</span></div>
-        <p class="cue ${s.state}">${esc(s.text)}</p><table><tbody>`;
+      h += `<div class="ex"><div class="exhead"><h2>${ex.name}</h2><span class="target">${ex.sets} × ${ex.low}–${ex.low + 2}${ex.uni ? " each side" : ""}</span></div>`;
+      if (ex.alt) h += `<p class="alt">${esc(ex.alt)}</p>`;
+      h += `<p class="cue ${s.state}">${esc(s.text)}</p>`;
+      h += warmupLine(ex);
+      if (ex.cue && CUES[ex.cue]) h += `<details class="form"><summary>Form</summary><p>${esc(CUES[ex.cue])}</p></details>`;
+      h += `<table><tbody>`;
+      const ph = ex.assist ? "assist kg" : (ex.bw ? "added kg (0 if none)" : "kg");
       for (let i = 0; i < ex.sets; i++) {
         const st = (d.sets && d.sets[i]) || {};
         h += `<tr><td class="setno">${i + 1}</td>
-          <td><input inputmode="decimal" placeholder="${ex.bw ? "added kg (0 if none)" : "kg"}" data-ex="${ex.id}" data-i="${i}" data-f="weight" value="${esc(st.weight || "")}"></td>
+          <td><input inputmode="decimal" placeholder="${ph}" data-ex="${ex.id}" data-i="${i}" data-f="weight" value="${esc(st.weight || "")}"></td>
           <td><input inputmode="numeric" placeholder="reps" data-ex="${ex.id}" data-i="${i}" data-f="reps" value="${esc(st.reps || "")}"></td></tr>`;
       }
       h += `</tbody></table><div class="exfoot"><label>Reps left in tank
-        <input class="rir" inputmode="numeric" placeholder="1–2" data-ex="${ex.id}" data-f="rir" value="${esc(d.rir || "")}"></label></div></div>`;
+        <input class="rir" inputmode="numeric" placeholder="1–2" data-ex="${ex.id}" data-f="rir" value="${esc(d.rir || "")}"></label>
+        <button class="flag${d.back ? " on" : ""}" data-flag="${ex.id}">${d.back ? "Back felt it ✓" : "Back felt it"}</button></div></div>`;
     });
     const t = timers[bi];
     h += `<button class="rest${t ? " run" : ""}" data-rest="${b.rest}" data-bi="${bi}">${t ? tfmt(t.left) : "Rest " + b.rest + "s"}</button></section>`;
@@ -261,6 +366,12 @@ function renderLog() {
 }
 
 function setText(x) { return `${x.weight === "" || x.weight == null ? "BW" : x.weight}×${x.reps || 0}`; }
+function entryText(v, sep) {
+  const done = v.sets.filter(x => Number(x.reps) > 0);
+  const sets = done.length ? done.map(setText).join(sep) : "skipped";
+  const rir = v.rir !== "" && v.rir != null ? ` (RIR ${v.rir})` : "";
+  return sets + rir;
+}
 
 function renderHistory() {
   if (!data.sessions.length) return `<p class="muted">No sessions yet. Log one and it will appear here.</p>`;
@@ -268,7 +379,7 @@ function renderHistory() {
   h += data.sessions.slice().reverse().map(s =>
     `<div class="hist"><h3>${stamp(s.date)} <span class="muted">${PROGRAMME[s.day].name}</span></h3>` +
     Object.entries(s.entries).map(([id, v]) =>
-      `<p><span>${ITEMS[id] ? ITEMS[id].name : id}</span><span class="nums">${v.sets.map(setText).join("  ")}${v.rir !== "" && v.rir != null ? ` · RIR ${v.rir}` : ""}</span></p>`).join("") +
+      `<p><span>${esc(nameOf(id))}</span><span class="nums">${esc(entryText(v, "  "))}${v.back ? ` <span class="back">· back</span>` : ""}</span></p>`).join("") +
     `</div>`).join("");
   h += `<p class="muted small">Backup and restore move your whole log between devices. Do a backup every few weeks.</p>
     <textarea readonly rows="8">${esc(exportText())}</textarea>
@@ -294,13 +405,16 @@ function exportText() {
   const lines = data.sessions.slice().reverse().map(s => {
     const head = `${stamp(s.date)} — ${PROGRAMME[s.day].name}`;
     const body = Object.entries(s.entries).map(([id, v]) =>
-      `  ${ITEMS[id] ? ITEMS[id].name : id}: ${v.sets.map(setText).join(", ")}${v.rir !== "" && v.rir != null ? ` (RIR ${v.rir})` : ""}`);
+      `  ${nameOf(id)}: ${entryText(v, ", ")}${v.back ? " [back felt it]" : ""}`);
     return [head, ...body].join("\n");
   });
   const w = data.weights.length ? `\nBodyweight (last 28 entries):\n` + data.weights.slice(-28).map(x =>
     `  ${new Date(x.date).toLocaleDateString("en-GB")}: ${x.kg}kg`).join("\n") : "";
   const tr = bwTrend();
-  return `Training log — week ${weekNumber()}, ${data.sessions.length} sessions logged\n\n` + lines.join("\n\n") + w + (tr && tr.cls ? `\n\nBodyweight trend: ${tr.text}` : "");
+  const flags = {};
+  data.sessions.forEach(s => Object.entries(s.entries).forEach(([id, v]) => { if (v.back) flags[id] = (flags[id] || 0) + 1; }));
+  const fl = Object.keys(flags).length ? `\n\nBack flags: ` + Object.entries(flags).map(([id, n]) => `${nameOf(id)} ×${n}`).join(", ") : "";
+  return `Training log — week ${weekNumber()}, ${data.sessions.length} sessions logged (programme v2, 24 Oct)\n\n` + lines.join("\n\n") + w + (tr && tr.cls ? `\n\nBodyweight trend: ${tr.text}` : "") + fl;
 }
 
 function tfmt(s) { return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; }
@@ -322,6 +436,14 @@ function bind() {
     else { draft[ex].sets[i] = draft[ex].sets[i] || {}; draft[ex].sets[i][f] = inp.value; }
     saveDraft();
   });
+  document.querySelectorAll("[data-flag]").forEach(b => b.onclick = () => {
+    const id = b.dataset.flag;
+    draft[id] = draft[id] || { sets: [] };
+    draft[id].back = !draft[id].back;
+    saveDraft();
+    b.classList.toggle("on", draft[id].back);
+    b.textContent = draft[id].back ? "Back felt it ✓" : "Back felt it";
+  });
   document.querySelectorAll("[data-rest]").forEach(b => b.onclick = () => {
     const bi = b.dataset.bi, secs = Number(b.dataset.rest);
     if (timers[bi]) { clearInterval(timers[bi].iv); delete timers[bi]; b.classList.remove("run"); b.textContent = `Rest ${secs}s`; return; }
@@ -338,7 +460,7 @@ function bind() {
     const entries = {};
     Object.entries(draft).forEach(([id, v]) => {
       const sets = (v.sets || []).filter(s => s && (s.reps || s.weight));
-      if (sets.length) entries[id] = { sets, rir: v.rir || "" };
+      if (sets.length || v.back) entries[id] = { sets, rir: v.rir || "", back: !!v.back };
     });
     if (!Object.keys(entries).length) { document.getElementById("ok").textContent = "Nothing to save yet."; return; }
     data.sessions.push({ date: new Date().toISOString(), day, entries });
